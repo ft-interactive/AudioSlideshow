@@ -1,0 +1,94 @@
+@import "basic";
+@import "audio";
+@import "color";
+
+#slideshow{
+    position: relative;
+    width: 100%;
+    height: 648px;
+    .credit{
+        position: absolute;
+        right: 2px;
+        bottom: 2px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 9px;
+        line-height: 1;
+        color: #dfded8;
+        cursor: default;
+        opacity: 0.9;
+        z-index:10;
+    }
+    .caption{
+        position: absolute;
+        bottom: 2.6%;
+        left: 1.2%;
+        right: 1.2%;
+        padding: 12px;
+        color: #FFF;
+        opacity: 0;
+        background-color: rgba(0,0,0,0.6);
+        font-size: 0.8em;
+        line-height: 1.6em;
+        -moz-transition: opacity 0.6s;
+        -webkit-transition: opacity 0.6s;
+        transition: opacity 0.6s;
+    }
+}
+
+#image-holder{
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        -moz-transition: opacity 0.7s;
+        -webkit-transition: opacity 0.7s;
+        transition: opacity 0.7s;
+        -moz-force-broken-image-icon: 1;
+        &.broken{
+            background: transparent url("../images/broken.png") no-repeat center center;
+        }
+    }
+}
+
+.narrow #image-holder{
+    height: 300px;
+}
+
+/* Fallback Display */
+.fallback{
+    position: relative;
+    width: 100%;
+    height: 100;
+}
+
+.fallback-overlay{
+    background-color: #FFF1E0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index:2;
+}
+
+.fallback-msg{
+    font-family: Georgia serif;
+    text-align: left;
+    font-style: italic;
+    font-size: 16px;
+    color: #333;
+    position:absolute;
+    width: 400px;
+    height: 200px;
+    margin-left: -206px;
+    margin-top: -230px;
+    top: 50%;
+    left: 50%;
+    background-color: #e9decf;
+    border: 1px solid #a7a59b;
+    padding: 20px;
+    line-height: 22px;
+}

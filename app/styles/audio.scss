@@ -1,0 +1,317 @@
+/* Control Bar */
+.controls, 
+.controls > div{
+    height: 40px;
+    border: 1px solid #57534C;
+    border-color: rgba(255,255,255,0.8) rgba(0,0,0,0.2) rgba(0,0,0,0.3) rgba(255,255,255,0.5);
+    margin:0;
+    padding:0;
+    float:left;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip:    padding;
+    background-clip:         padding-box;
+}
+.controls{
+    overflow: hidden;
+    visibility: hidden;
+    box-sizing: border-box;
+    background-color: #e9decf;
+    background-image: -webkit-linear-gradient(rgba(255, 241, 224,0),rgba(17, 16, 12,0.14));
+    background-image: -moz-linear-gradient(rgba(255, 241, 224,0),rgba(17, 16, 12,0.14));
+    background-image: -o-linear-gradient(rgba(255, 241, 224,0),rgba(17, 16, 12,0.14));
+    background-image: -ms-linear-gradient(rgba(255, 241, 224,0),rgba(17, 16, 12,0.14));
+    background-image: linear-gradient(rgba(255, 241, 224,0),rgba(17, 16, 12,0.14));
+    -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.1),1px 1px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow:    0 0 2px rgba(0,0,0,0.1),1px 1px 2px rgba(0,0,0,0.1);
+    -o-box-shadow:      0 0 2px rgba(0,0,0,0.1),1px 1px 2px rgba(0,0,0,0.1);
+    -ms-box-shadow:     0 0 2px rgba(0,0,0,0.1),1px 1px 2px rgba(0,0,0,0.1);
+    box-shadow:         0 0 2px rgba(0,0,0,0.1),1px 1px 2px rgba(0,0,0,0.1);
+    font-size: 11px;
+    margin-top: 15px;
+    border-radius: 3px;
+    text-shadow: 0 1px 0 #fff;
+    line-height: 36px;
+    width:100%;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-touch-callout:  none;
+    -webkit-user-select:    none;
+    -khtml-user-select:     none;
+    -moz-user-select:       none;
+    -ms-user-select:        none;
+    user-select:            none;
+    .play-pause{
+        width:60px;
+        overflow:hidden;
+        border-width:0 1px 0 0;
+        &:hover {
+            background-color: #ddd2c4;
+            background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,0.14)));
+            background-image: -webkit-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.14));
+            background-image: -moz-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.14));
+            background-image: -o-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.14));
+            background-image: -ms-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.14));
+            background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.14));
+            text-shadow:0 1px 0 rgba(255,255,255,0.6);
+        };
+        &:active{
+            background-image: -webkit-linear-gradient(rgba(0,0,0,0.14),rgba(0,0,0,0));
+            background-image: -moz-linear-gradient(rgba(0,0,0,0.14),rgba(0,0,0,0));
+            background-image: -o-linear-gradient(rgba(0,0,0,0.14),rgba(0,0,0,0));
+            background-image: -ms-linear-gradient(rgba(0,0,0,0.14),rgba(0,0,0,0));
+            background-image: linear-gradient(rgba(0,0,0,0.14),rgba(0,0,0,0));
+            text-shadow: none;
+            -webkit-transition: background-color 150ms;
+            -moz-transition: background-color 150ms;
+            transition: background-color 150ms;
+        }
+    }
+    .btn-state{
+        display:none;
+        width:60px;
+        margin:0;
+        cursor:pointer;
+        color:#333;
+        line-height: 42px;
+    }
+    .controls .play{
+        display:block
+    }
+    .scrubber-container{
+        border-width:0 1px;
+        width:809px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+    .scrubber{
+        position: relative;
+        cursor: pointer;
+        height: 14px;
+        margin: 11px 12px 10px 12px;
+        border: 1px solid #57534C;
+        border-color: rgba(0,0,0,0.3) rgba(255,255,255,0.5) rgba(255,255,255,0.7) rgba(0,0,0,0.2);
+        background-color: #e9decf;
+        background-image: -webkit-linear-gradient(rgba(0,0,0,0.2),rgba(255, 255, 255,0));
+        background-image: -moz-linear-gradient(rgba(0,0,0,0.2),rgba(255, 255, 255,0));
+        background-image: -o-linear-gradient(rgba(0,0,0,0.2),rgba(255, 255, 255,0));
+        background-image: -ms-linear-gradient(rgba(0,0,0,0.2),rgba(255, 255, 255,0));
+        background-image: linear-gradient(rgba(0,0,0,0.2),rgba(255, 255, 255,0));
+        overflow: hidden;
+    }
+    .progress{
+        z-index: 1;
+        background-color: #868078;
+        background-image: -webkit-linear-gradient(rgba(255, 255, 255,0.2),rgba(255, 255, 255,0.1),rgba(255, 255, 255,0),rgba(0,0,0,0.33));
+        background-image: -moz-linear-gradient(rgba(255, 255, 255,0.2),rgba(255, 255, 255,0.1),rgba(255, 255, 255,0),rgba(0,0,0,0.33));
+        background-image: -o-linear-gradient(rgba(255, 255, 255,0.2),rgba(255, 255, 255,0.1),rgba(255, 255, 255,0),rgba(0,0,0,0.33));
+        background-image: -ms-linear-gradient(rgba(255, 255, 255,0.2),rgba(255, 255, 255,0.1),rgba(255, 255, 255,0),rgba(0,0,0,0.33));
+        background-image: linear-gradient(rgba(255, 255, 255,0.2),rgba(255, 255, 255,0.1),rgba(255, 255, 255,0),rgba(0,0,0,0.33));
+    }
+    .loaded{
+        background-color: transparent;
+        background-image: -webkit-linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05),rgba(75, 77, 46, 0.02),rgba(0,0,0,0.05));
+        background-image: -moz-linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05),rgba(75, 77, 46, 0.02),rgba(0,0,0,0.05));
+        background-image: -o-linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05),rgba(75, 77, 46, 0.02),rgba(0,0,0,0.05));
+        background-image: -ms-linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05),rgba(75, 77, 46, 0.02),rgba(0,0,0,0.05));
+        background-image: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05),rgba(75, 77, 46, 0.02),rgba(0,0,0,0.05));
+    }
+    .time{
+        cursor: default;
+        width: 98px;
+        border-width: 0 0 0 1px;
+        color: #333;
+        font-family: "Arial","Helvetica", sans-serif;
+    }
+    .played{
+        padding: 0 3px 0 0;
+        font-style: normal;
+    }
+    .duration{
+        padding: 0 0 0 3px;
+        font-weight: 400;
+        opacity: 0.8;
+    }
+}
+
+.controls ::selection { 
+    background: transparent;
+    cursor: default;
+}
+
+.controls ::-moz-selection { 
+    background: transparent;
+    cursor: default;
+}
+
+.controls .progress, .controls .loaded{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 14px;
+    width: 0;
+}
+
+
+.controls .error-message{
+    float:left;
+    display:none;
+    margin:0 10px;
+    height:36px;
+    width:400px;
+    overflow:hidden;
+    white-space:nowrap;
+    color:#fff;
+    text-overflow:          ellipsis;
+    -o-text-overflow:       ellipsis;
+    -khtml-text-overflow:   ellipsis;
+    -moz-text-overflow:     ellipsis;
+    -webkit-text-overflow:  ellipsis;
+    a{
+        color:#eee;
+        text-decoration:none;
+        padding-bottom:1px;
+        border-bottom:1px solid #999;
+        white-space:wrap;
+    }
+}
+
+
+.playing .play,.playing .loading,.playing .error{
+    display:none
+}
+
+.playing .pause{
+    display:block
+}
+
+.loading .play,.loading .pause,.loading .error{
+    display:none
+}
+
+.loading .loading{
+    display:block
+}
+
+.error .time,.error .play,.error .pause,.error .scrubber,.error .loading{
+    display:none
+}
+
+.error .error{
+    display:block
+}
+
+.controls .btn-state.error{
+    cursor:auto
+}
+
+.error .error-message{
+    display:block
+}
+
+.cursor-pointer {cursor:pointer;}
+
+/* Narrow Width */
+.narrow .scrubber-container{
+    width: 438px;
+}
+
+/*  Font Awesome
+    the iconic font designed for use with Twitter Bootstrap
+    -------------------------------------------------------
+    The full suite of pictographic icons, examples, and documentation
+    can be found at: http://fortawesome.github.com/Font-Awesome/
+
+    License
+    -------------------------------------------------------
+    The Font Awesome webfont, CSS, and LESS files are licensed under CC BY 3.0:
+    http://creativecommons.org/licenses/by/3.0/ A mention of
+    'Font Awesome - http://fortawesome.github.com/Font-Awesome' in human-readable
+    source code is considered acceptable attribution (most common on the web).
+    If human readable source code is not available to the end user, a mention in
+    an 'About' or 'Credits' screen is considered acceptable (most common in desktop
+    or mobile software).
+
+    Contact
+    -------------------------------------------------------
+    Email: dave@davegandy.com
+    Twitter: http://twitter.com/fortaweso_me
+    Work: http://lemonwi.se co-founder
+
+    */
+@font-face {
+  font-family: "FontAwesome";
+  src: url('fonts/fontawesome-webfont.eot');
+  src: url('fonts/fontawesome-webfont.eot?#iefix') format('eot'), url('fonts/fontawesome-webfont.woff') format('woff'), url('fonts/fontawesome-webfont.ttf') format('truetype'), url('fonts/fontawesome-webfont.svg#FontAwesome') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*  Font Awesome styles
+    ------------------------------------------------------- */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+a [class^="icon-"], a [class*=" icon-"] {
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+/* makes the font 33% larger relative to the icon container */
+.icon-large:before {
+  vertical-align: top;
+  font-size: 1.3333333333333333em;
+}
+
+.btn [class^="icon-"], .btn [class*=" icon-"] {
+  /* keeps button heights with and without icons the same */
+
+  line-height: .9em;
+}
+
+li [class^="icon-"], li [class*=" icon-"] {
+  display: inline-block;
+  width: 1.25em;
+  text-align: center;
+}
+
+li .icon-large[class^="icon-"], li .icon-large[class*=" icon-"] {
+  /* 1.5 increased font size for icon-large * 1.25 width */
+
+  width: 1.875em;
+}
+
+li[class^="icon-"], li[class*=" icon-"] {
+  margin-left: 0;
+  list-style-type: none;
+}
+
+li[class^="icon-"]:before, li[class*=" icon-"]:before {
+  text-indent: -2em;
+  text-align: center;
+}
+
+li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
+  text-indent: -1.3333333333333333em;
+}
+
+.icon-refresh:before              { content: "\f021"; }
+.icon-step-backward:before        { content: "\f048"; }
+.icon-fast-backward:before        { content: "\f049"; }
+.icon-backward:before             { content: "\f04a"; }
+.icon-play:before                 { content: "\f04b"; }
+.icon-pause:before                { content: "\f04c"; }
+.icon-stop:before                 { content: "\f04d"; }
+.icon-forward:before              { content: "\f04e"; }
+.icon-fast-forward:before         { content: "\f050"; }
+.icon-step-forward:before         { content: "\f051"; }
+.icon-eject:before                { content: "\f052"; }
+.icon-chevron-left:before         { content: "\f053"; }
+.icon-chevron-right:before        { content: "\f054"; }
+.icon-plus-sign:before            { content: "\f055"; }
+.icon-minus-sign:before           { content: "\f056"; }
+.icon-exclamation-sign:before     { content: "\f06a"; }

@@ -1,0 +1,37 @@
+@font-face{
+    font-family: "BentonSans";
+    src: url("http://s1.ft-static.com/m/font/e9d47971-b7d8-4663-8c9b-3a0b425e981f-2.eot");
+    src: url("http://s1.ft-static.com/m/font/e9d47971-b7d8-4663-8c9b-3a0b425e981f-2.eot?#iefix") format("embedded-opentype"), url("http://s1.ft-static.com/m/font/e9d47971-b7d8-4663-8c9b-3a0b425e981f-3.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face{
+    font-family: "BentonSans";
+    src: url("http://s1.ft-static.com/m/font/76e393a7-edbd-4283-91db-93b1a40fe465-2.eot");
+    src: url("http://s1.ft-static.com/m/font/76e393a7-edbd-4283-91db-93b1a40fe465-2.eot?#iefix") format("embedded-opentype"), url("http://s1.ft-static.com/m/font/76e393a7-edbd-4283-91db-93b1a40fe465-3.woff") format("woff");
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face{
+    font-family: "Clarion";
+    src: url("fonts/Clarion.woff") format("woff"),
+        url("fonts/Clarion.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face{
+    font-family: "Clarion";
+    src: url("fonts/Clarion-Bold.woff") format("woff"),
+        url("fonts/Clarion-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: bold;
+}
+
+// Typography
+// -------------------------
+$sansFontFamily:        "BentonSans", Helvetica, Arial, sans-serif !default;
+$serifFontFamily:       "Clarion", Georgia, "Times New Roman", Times, serif !default;
+$monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace !default;
