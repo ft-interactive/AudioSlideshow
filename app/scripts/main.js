@@ -215,7 +215,7 @@
 			onTimeUpdate: function (currentTime) {
 				currentAudioTime = currentTime;
 			},
-			onEnded: function() {
+			onEnded: function () {
 
 			}
 		});

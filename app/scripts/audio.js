@@ -156,26 +156,26 @@
             $bars.attr('title',  time);
         });
 
-        $stage.click(function (evt) {
+        $stage.click(function () {
             var p = $audio.data('jPlayer'),
                 status = p.status;
 
             if (status.currentTime === 0 || status.paused) {
-                $audio.jPlayer( 'play' );
+                $audio.jPlayer('play');
             } else if (!status.paused) {
-                $audio.jPlayer( 'pause' );
+                $audio.jPlayer('pause');
             }
         });
 
         return {
-            stageReady: function() {
+            stageReady: function () {
                 $controls.css('visibility', 'visible');
                 $stage.addClass('cursor-pointer');
             },
             stop: function () {
                 $audio.jPlayer('stop');
             },
-            play: function() {
+            play: function () {
                 $audio.jPlayer('play');
             },
             pause: function () {
