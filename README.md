@@ -3,7 +3,7 @@ Audio Slideshow
 
 Look mum no hands!
 
-## For Journalists
+### For Journalists
 
 * Getting started
 * How to make an Audio Slideshow Google Spreadsheet (gss)
@@ -12,7 +12,7 @@ Look mum no hands!
 * Publishing
 * FAQs
 
-## For Developers
+### For Developers
 
 * Overview
 * Hacking
@@ -23,7 +23,7 @@ Look mum no hands!
 
 ## Super quick start
 
-1. In Google Drive navigate to the 'IG Audio Slideshow' shared folder. If you dont have the folder shared with you then please ask. Email [team.interactive@ft.com]
+1. In Google Drive navigate to the 'IG Audio Slideshow' shared folder. If you dont have the folder shared with you then please ask. Email team.interactive@ft.com
 1. Click Create > From Template. Agree the the 'Create and Share' dialog.
 1. In the Template Gallery, find the 'IG Audio Slideshow' template and click 'Use this template'.
 1. The spreadsheet will open. To fill in the spreadsheet, follow the instructions in the notes on the column headers.
@@ -35,5 +35,7 @@ Look mum no hands!
 1. Use the following IFRAME snippet in Methode. Again substitute the Spreadsheet ID.
 
 ```html
-<iframe src="http://ig.ft.com/nohands/audioss/0.0.1/?id=SpreadsheetID" width="972" height="790" scolling="no" style="border:0 none;" frameborder="0"></iframe>
+<iframe src="http://ig.ft.com/nohands/audioss/0.0.1/?id=SpreadsheetID" 
+			width="972" height="790" scolling="no" style="border:0 none;" frameborder="0">
+</iframe>
 ```
