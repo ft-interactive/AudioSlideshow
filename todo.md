@@ -3,6 +3,8 @@ To do
 
 # High
 
+* enabled/install purge triggers on the spreadsheet
+* add launch UI to spreadsheet template
 * Documentation
 	- Journalists
 	- Developers
@@ -13,28 +15,22 @@ To do
 	- FF
 	- ipad
 	- iphone
-* CDN URLs in build
-* deploy
-* fallback include
-* test sentry
-* test google analytics snippet
-* enabled/install purge triggers on the spreadsheet
-
+	- android
+* build step to rewrite static URLs to include CDN domain
+* add sentry/Raven logging
+* extract fill.js, utils.js, furniture.js and nohands.js into common project
 
 
 # Medium
 
 * file revving - yeoman/grunt issue
 * Build includes jplayer swf file and other component dependencies
-* Extract NoHands into seperate library
-* Extract Furniture into seperate lib - including furniture css
-* deploy step in Gruntfile
 * Preload the next image
-* resize to available document width and height
 * Portrait images
 * Take ideas from the Timeline No Hands template
-* step to launch template from the spreadsheet
-
+* deploy step in Gruntfile
+* release step in Gruntfile: bump version, deploy, git tag
+* resize to available document width and height
 
 
 # Low
@@ -43,4 +39,9 @@ To do
 * Metrics
 * git taggin and version bumping etc in build
 * Print Github URL in scripts etc - Build step
-* Codeship or Travis
+* CI: Codeship or Travis
+* audio slideshows for mobile
+* initial slide UI - eg thumbnails
+* improved scruuber: size, styles, markers for slides transtion points
+* use gmachine to fetch images optimzed to size/user agent/connection specifics
+* integration tests
