@@ -46,7 +46,7 @@
 			}
 
 			$(function () {
-				//NoHands.renderErrors();
+				NoHands.renderErrors();
 			});
 
 			if (options.ready) {
