@@ -13,17 +13,18 @@
 		second = 1000,
 		minute = second * 60,
 		cachedIndex = 0,
-		//aspectRatio = 1.5,
 		currentAudioTime = 0,
-		currentSlide;
+		currentSlide,
+		isFullscreenMode,
+		startControlsTimer;
 
 
 	var onData = function onData(data) {
-		
+
 		Slideshow = data;
-		
+
 		var missingImageURLs = 0, missingStartTimes = 0;
-		
+
 		$.each(Slideshow.slides, function (i, n) {
 			n.caption.text = (n.caption.text || '').replace(/\ +/g, ' ').replace(/^\ /, '').replace(/\ $/, '');
 
@@ -61,7 +62,7 @@
 
 			n.ms = (Number(t[0]) * minute) + (Number(t[1]) * second) + (Number(t[2]) * 101);
 		});
-		
+
 		Slideshow.slides.sort(function (a, b) {
 			return a.ms > b.ms ? 1 : -1;
 		});
@@ -86,7 +87,7 @@
 	var pixelGif = '../images/pixel.gif';
 
 	var displaySlide = function displaySlide(index) {
-
+		//console.log('---show slide---');
 		if (!Slideshow || !Slideshow.slides) {
 			return;
 		}
@@ -147,12 +148,13 @@
 
 
 	var playAtCurrentTime = function playAtCurrentTime() {
-		
+		// alert('func:: playAtCurrentTime');
 		if (!length || !currentSlide) {
 			return;
 		}
 
 		if (currentSlide.ms === currentAudioTime) {
+			//alert('---currentSlide.ms === currentAudioTime---');
 			return;
 		}
 
@@ -173,7 +175,7 @@
 			}
 			i++;
 		}
-
+		//alert('---playAtCurrentTime: ' + indx + '---');
 		displaySlide(indx);
 		cachedIndex = indx;
 		return indx;
@@ -183,6 +185,7 @@
 		var interval;
 
 		var slideshowId = 'slideshow',
+
 			audioFilename,
 			mp3,
 			ogg;
@@ -194,6 +197,12 @@
 		} else {
 			mp3 = NoHands.getAudioUrl('mp3', Slideshow);
 			ogg = NoHands.getAudioUrl('oga', Slideshow);
+		}
+
+		isFullscreenMode = window.location.search.indexOf('mode=fullscreen') !== -1;
+
+		if (isFullscreenMode) {
+			$(document.body).addClass('videoesque');
 		}
 
 		var audioBar = new AudioBar({
@@ -220,10 +229,98 @@
 			}
 		});
 
+		$('.videoesque .play-pause .btn-state').on('touchstart', function() {
+			$(this).addClass('showHighlight');
+		});
+
+		$('.videoesque .play-pause .btn-state').on('touchend', function() {
+			$(this).removeClass('showHighlight');
+		});
+
+
+		var container = document.getElementById('exp-container');
+
+		var showAudioControls = function showAudioControls() {
+			if (isFullscreenMode) {
+				audioBar.toggleControls();
+			} else {
+				audioBar.toggle();
+			}
+		};
+
+		container.addEventListener('click', showAudioControls, true);
+
 		displaySlide(0);
 		audioBar.stageReady();
+		setPlayerSize();
 	};
 
+	var setPlayerSize = function setPlayerSize() {
+		var w, h, aspectRatio = 1.778, orientation, picLoaded=false;
+
+		var img = document.getElementById('audioSS-presentation');
+
+		var imgH, imgW, scrubW;
+
+		function redraw(w, h) {
+			console.log('redraw', w, h, w / h, w / h > aspectRatio);
+			if ((w / h > aspectRatio) !== orientation) {
+				orientation = !orientation;
+			}
+
+			var screenIsPortrait = !orientation;
+
+			imgW = screenIsPortrait ? w : (h * aspectRatio);
+			imgH = Math.ceil(screenIsPortrait ? (w / aspectRatio) : h );
+
+			if (isFullscreenMode) {
+				if(w < 480) {
+					scrubW = (w * 0.6);
+				} else {
+					scrubW = (imgW * 0.6) - 170;
+				}
+			} else {
+				scrubW = imgW - 170;
+				img.style.bottom = 80 +'px';
+			}
+
+			$('.scrubber-container').width(scrubW + 'px');
+
+			img.style.width = imgW + 'px';
+			img.style.marginLeft = ((imgW/2) * -1) + 'px';
+			img.style.height = imgH + 'px';
+			img.style.marginTop = ((imgH/2) * -1) + 'px';
+		}
+
+		function callTimeout() {
+			setTimeout(function(){
+				console.log();
+				var style = window.getComputedStyle(document.body);
+				var bodyW = parseInt(style.getPropertyValue('width'),10);
+				var bodyH = parseInt(style.getPropertyValue('height'),10);
+				console.log('---------------', bodyW, bodyH);
+				var changed = bodyW !== w || bodyH !== h;
+
+				if (changed) {
+					w = bodyW;
+					h = bodyH;
+					redraw(bodyW, bodyH);
+				}
+				if (picLoaded === false) {
+					$('#audioSS-presentation').removeClass('hidden');
+					$('#audioSS-presentation').addClass('show');
+					$('#audioSS-presentation').stop().animate({
+						opacity:1
+					}, 500);
+					picLoaded = true;
+				}
+				callTimeout();
+			}, 500);
+		}
+
+		redraw();
+		callTimeout();
+	}
 
 	NoHands.init({
 		onData: onData,
