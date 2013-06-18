@@ -2,10 +2,54 @@
 @import "audio";
 @import "color";
 
+.hidden{
+    visibility: hidden;
+}
+
+.show{
+    visibility: visible; 
+    opacity: 0;
+}
+
+body{
+    padding:0;
+    margin:0;
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+}
+
+.videoesque{
+    background-color:black;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+}
+
+.videoesque #audioSS-presentation{
+    overflow: hidden;
+}
+
+@media screen and (max-width: 479px){
+    .videoesque #audioSS-presentation{
+    overflow: visible;
+}
+}
+#audioSS-presentation{
+    position: fixed;
+    top:50%;
+    left:50%;
+    width:400px;
+    height:400px;
+}
+
 #slideshow{
-    position: relative;
-    width: 100%;
-    height: 648px;
+    position: absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
     .credit{
         position: absolute;
         right: 2px;

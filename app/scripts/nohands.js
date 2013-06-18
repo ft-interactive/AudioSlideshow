@@ -24,7 +24,7 @@
 					sheets: ['slides', 'options', 'credits'],
 					processOptionsSheet: true
 				};
-
+console.log(params);
 			// overlay query params onto the request options object
 			dataOpts = $.extend(true, dataOpts, options.bertha || {}, params);
 

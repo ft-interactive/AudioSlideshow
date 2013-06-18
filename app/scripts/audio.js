@@ -35,9 +35,12 @@
 
             $controls = $(controlsHTML),
 
-            $audio = $(audioContainerHTML);
+            $audio = $(audioContainerHTML),
+
+            controlsTimeout;
 
         var containerClass = 'explainer-container';
+        var containerId = 'exp-container';
 
         if ($.type(options.size) === 'string') {
             if (options.size.toLowerCase() === 'narrow') {
@@ -45,12 +48,12 @@
             }
         }
 
-        $stage.wrap('<div class="' + containerClass + '" />');
+        var $container = $stage.wrap('<div class="' + containerClass + '" id="' + containerId + '"/>').parents('.' + containerClass);
 
         $controls.insertAfter($stage);
 
         $audio.insertAfter($controls);
-
+        console.log('inserted Audio');
         var supplied = [], media = {};
 
         if (options.mp3) {
@@ -78,10 +81,9 @@
 
         function playStage(evt) {
             // console.log(evt.type, evt);
-
             var currentTime = evt.jPlayer.status ? evt.jPlayer.status.currentTime : 0,
                 milliseconds = secondsToMilliseconds(currentTime);
-            
+
             options.onPlay(milliseconds);
         }
 
@@ -129,7 +131,6 @@
             warningAlerts: false,
             play: playStage,
             seeked: playStage, /* WARNING this doesn't fire when flash is used to play the audio */
-            waiting: stopStage,
             pause: stopStage,
             ended: function ended(evt) {
                 console.log(evt.type, evt);
@@ -148,7 +149,6 @@
 
         $controls.on('mousemove', '.loaded, .progress', function (evt) {
             var time = '';
-            
             if (audioLength) {
                 time = $.jPlayer.convertTime(mouseEventToSeconds(evt)).toString().replace(/^0|/, '');
             }
@@ -156,18 +156,11 @@
             $bars.attr('title',  time);
         });
 
-        $stage.click(function () {
-            var p = $audio.data('jPlayer'),
-                status = p.status;
 
-            if (status.currentTime === 0 || status.paused) {
-                $audio.jPlayer('play');
-            } else if (!status.paused) {
-                $audio.jPlayer('pause');
-            }
-        });
 
         return {
+            audio: $audio,
+            container: $container,
             stageReady: function () {
                 $controls.css('visibility', 'visible');
                 $stage.addClass('cursor-pointer');
@@ -180,14 +173,45 @@
             },
             pause: function () {
                 $audio.jPlayer('pause');
+            },
+            toggle: function () {
+                var p = $audio.data('jPlayer'),
+                    status = p.status;
+
+                if (status.currentTime === 0 || status.paused) {
+                    $audio.jPlayer('play');
+                } else if (!status.paused) {
+                    $audio.jPlayer('pause');
+                }
+            },
+            showControls: function showControls() {
+                $container.removeClass('controls-off');
+            },
+            hideControls: function hideControls () {
+                console.log($audio.data('jPlayer').status.paused);
+                if (!$audio.data('jPlayer').status.paused) {
+                    controlsTimeout = setTimeout(function() {
+                        $container.addClass('controls-off');
+                    },2000);
+                } else {
+                    clearTimeout(controlsTimeout);
+                }
+            },
+            toggleControls: function toggleControls() {
+                clearTimeout(controlsTimeout);
+                if ($container.is('.controls-off')) {
+                    this.showControls();
+                } else {
+                    this.hideControls();
+                }
             }
         };
 
-	};
+    };
 
-	window.AudioBar.swf = 'components/JPlayer/jquery.jplayer/Jplayer.swf';
-	
-	// Private helper functions
+    window.AudioBar.swf = 'components/JPlayer/jquery.jplayer/Jplayer.swf';
+
+    // Private helper functions
     function getMouseOffset(evt) {
 
         var result = { x: evt.offsetX, y: evt.offsetY };

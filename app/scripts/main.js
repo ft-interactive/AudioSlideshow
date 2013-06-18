@@ -241,11 +241,14 @@
 		var container = document.getElementById('exp-container');
 
 		var showAudioControls = function showAudioControls() {
-			if (isFullscreenMode) {
-				audioBar.toggleControls();
-			} else {
-				audioBar.toggle();
-			}
+
+			setTimeout(function() {
+				if (isFullscreenMode) {
+					audioBar.toggleControls();
+				} else {
+					audioBar.toggle();
+				}
+			}, 100);
 		};
 
 		container.addEventListener('click', showAudioControls, true);

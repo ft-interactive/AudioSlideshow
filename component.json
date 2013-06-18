@@ -4,7 +4,8 @@
   "dependencies": {
     "jquery": "~1.9.1",
     "JPlayer": "latest",
-    "bertha.js": "latest"
+    "bertha.js": "~0.0.4",
+    "modernizr": "~2.6.2"
   },
   "devDependencies": {}
 }

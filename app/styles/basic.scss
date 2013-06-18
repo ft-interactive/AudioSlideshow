@@ -4,18 +4,19 @@
 
 $ftcomWidth:        972px;
 $ftcomWellWidth:    600px;
+$ftphotoRatio:       1.78;
 
 body {
     background: $bodyBackground;
     margin: 0 auto;
-    width: $ftcomWidth;
+    width: 100%;
     font-family: $sansFontFamily;
     padding: 0;
     color: $textColor;
 }
 
 .narrow {
-	width: $ftcomWellWidth;
+	width: 100%;
 }
 
 .hidden {

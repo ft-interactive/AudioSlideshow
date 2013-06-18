@@ -10,6 +10,9 @@
         <meta name="description" content="Audio slideshow">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
         <!--#include virtual="/inc/extras-head-1.html" -->
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
         <!-- build:css styles/main.css -->
         <link rel="stylesheet" href="styles/furniture.css">
         <link rel="stylesheet" href="styles/main.css">
@@ -18,14 +21,16 @@
     </head>
     <body>
         <!--#include virtual="/inc/fallback.html" -->
-        <div id="error-msg" class="hidden"></div>
-        <header class="furniture"></header>
-        <div id="slideshow" role="main">
-            <div id="image-holder"></div>
-            <div id="caption" class="caption"></div>
-            <div id="credit" class="credit"></div>
+        <div id="audioSS-presentation" class="hidden">
+            <div id="error-msg" class="hidden"></div>
+            <header class="furniture"></header>
+            <div id="slideshow" role="main">
+                <div id="image-holder"></div>
+                <div id="caption" class="caption"></div>
+                <div id="credit" class="credit"></div>
+            </div>
+            <footer class="furniture hidden"></footer>
         </div>
-        <footer class="furniture hidden"></footer>
         <!--#include virtual="/inc/extras-foot-1.html" -->
         <!-- build:js scripts/foot.js -->
         <script src="scripts/fill.js"></script>
