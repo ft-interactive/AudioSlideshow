@@ -38,7 +38,7 @@ See the 'Super quick start' section below if you just need a refresher.
 ![Fill in the options sheet](https://www.evernote.com/shard/s213/sh/c63411e7-8d7c-4661-bc56-bd4d41a5332a/c588cc2994ff9241021104fa928459a9/deep/0/Screenshot%2010/07/2013%2013:04.png)
 1. Get the ID from the address bar of the Spreadsheet.  
 ![the ID follows ?key=](https://www.evernote.com/shard/s213/sh/88f591e8-f80a-432a-acde-900a06ff24fa/7358be3582da6e81fc84813351f19ff7/deep/0/Screenshot%2005/03/2013%2013:11.jpg)  
-1. Check the trigger publish trigger is enabled.  
+1. Check the publish trigger is enabled.  
 1. Substitute the ID into the **template URL**: [http://ig.ft.com/nohands/audioss/0.0.1/?id=SpreadsheetID]  
 1. Use the following **IFRAME** snippet in **Methode**. Again substitute the Spreadsheet ID.  
 
