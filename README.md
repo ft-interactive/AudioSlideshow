@@ -42,7 +42,7 @@ See the 'Super quick start' section below if you just need a refresher.
 1. Substitute the ID into the **template URL**: [http://ig.ft.com/nohands/audioss/0.0.1/?id=SpreadsheetID]  
 1. Use the following **IFRAME** snippet in **Methode**. Again substitute the Spreadsheet ID.  
 
-```
+```html
 	<iframe src="http://ig.ft.com/nohands/audioss/0.0.1/?id=SpreadsheetID" 
 			width="972" height="790" scolling="no" style="border:0 none;" frameborder="0">
 	</iframe>
