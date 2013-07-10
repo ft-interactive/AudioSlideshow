@@ -3,26 +3,6 @@ Audio Slideshow
 
 Look mum no hands!
 
-### For Journalists
-
-See the 'Super quick start' section below if you just need a refresher.
-
-* Getting started
-* How to make an Audio Slideshow Google Spreadsheet (gss)
-* Using the the No Hands Template
-* Working with images
-* Publishing
-* FAQs
-
-### For Developers
-
-* Overview
-* Hacking
-* Developing locally
-* Releasing/Deploying
-* Tools etc.
-
-
 ## Super quick start
 
 1. Go to the [FT Spreadsheet templates gallery](https://drive.google.com/a/ft.com/templates?type=spreadsheets).
