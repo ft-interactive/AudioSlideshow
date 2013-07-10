@@ -31,7 +31,7 @@ See the 'Super quick start' section below if you just need a refresher.
 1. A new spreadsheet will be created from the template and will opened in your browser.
 1. Rename you new Audio Slideshow spreadsheet 
 ![Rename the spreadsheet](https://www.evernote.com/shard/s213/sh/26ec058b-9fdf-4ace-84bd-ca9c339428da/73da387a14be17ff855bddbd984c4708/deep/0/Screenshot%2010/07/2013%2012:56.png) 
-1. Drag the new spreadsheet into the *IG Audio Slideshow* shared folder. If you don't have the folder shared with you then please ask for access to it. Email: [team.interactive@ft.com](team.interactive@ft.com). Once the spreadsheet is in this folder then it will be visible to the Audio Slideshow widget. 
+1. Drag the new spreadsheet into the *IG Audio Slideshow* shared folder. If you don't have the folder shared with you then please ask for access to it. Email: [team.interactive@ft.com](team.interactive@ft.com). Once the spreadsheet is in this folder then it will be visible to the Audio Slideshow widget.  
 ![Drag spreadsheet into the IG Audio Slideshow folder](https://www.evernote.com/shard/s213/sh/ee4a17e1-f8f9-4b15-820b-45c629fb3077/1b16ad344b98ff6cba5f50a6f8532e90/deep/0/Screenshot%2010/07/2013%2012:59.png)  
 1. To fill in the spreadsheet, **follow the instructions in the notes** on the column headers. 
 1. Put images and audio in a folder on the interactive server and make sure you reference this folder in the options sheet. 
