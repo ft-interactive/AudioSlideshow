@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "dependencies": {
     "jquery": "~1.9.1",
-    "JPlayer": "latest",
-    "bertha.js": "latest"
+    "JPlayer": "https://github.com/ft-interactive/jPlayer.git",
+    "bertha.js": "https://github.com/ft-interactive/bertha.js.git"
   },
   "devDependencies": {}
 }
