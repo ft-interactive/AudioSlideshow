@@ -19,11 +19,11 @@ Look mum no hands!
 1. Get the ID from the address bar of the Spreadsheet.  
 ![the ID follows ?key=](https://www.evernote.com/shard/s213/sh/88f591e8-f80a-432a-acde-900a06ff24fa/7358be3582da6e81fc84813351f19ff7/deep/0/Screenshot%2005/03/2013%2013:11.jpg)  
 1. Check the publish trigger is enabled.  
-1. Substitute the ID into the **template URL**: [http://www.ft.com/ig/nohands/audioss/0.0.1/?id=SpreadsheetID]  
+1. Substitute the ID into the **template URL**: [http://www.ft.com/ig/nohands/audioss/0.0.2/?id=SpreadsheetID]  
 1. Use the following **IFRAME** snippet in **Methode**. Again substitute the Spreadsheet ID.  
 
 ```html
-	<iframe src="http://www.ft.com/ig/nohands/audioss/0.0.1/?id=SpreadsheetID" 
+	<iframe src="http://www.ft.com/ig/nohands/audioss/0.0.2/?id=SpreadsheetID" 
 			width="972" height="790" scolling="no" style="border:0 none;" frameborder="0">
 	</iframe>
 ```
